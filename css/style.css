@@ -1,0 +1,273 @@
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   COLOR SYSTEM
+========================= */
+:root {
+  --green: #008753;
+  --green-dark: #006b42;
+
+  --bg: #ffffff;
+  --surface: #f6f7f8;
+  --border: #dcdcdc;
+  --text: #111;
+  --muted: #555;
+  --ad-bg: #fafafa;
+}
+
+body.dark {
+  --bg: #0f1115;
+  --surface: #1b1f27;
+  --border: #2e3440;
+  --text: #f1f1f1;
+  --muted: #b5b5b5;
+  --ad-bg: #161a20;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+main {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+  max-width: 960px;
+  margin: auto;
+  padding: 1.2rem 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 4px solid var(--green);
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+}
+
+.site-header h1 {
+  font-size: 1.6rem;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* =========================
+   THEME SWITCH
+========================= */
+.theme-switch {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.theme-switch button {
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.theme-switch button:hover {
+  border-color: var(--green);
+}
+
+/* =========================
+   CALCULATOR CARD
+========================= */
+.calculator {
+  background: var(--surface);
+  padding: 1.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.calculator h2 {
+  margin-bottom: 1.4rem;
+  color: var(--green);
+}
+
+/* =========================
+   FORM
+========================= */
+label,
+legend {
+  font-weight: 600;
+  margin-top: 1.2rem;
+  display: block;
+}
+
+/* Remove ugly default fieldset styling */
+fieldset {
+  border: none;
+  padding: 0;
+  margin-top: 1.2rem;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+/* =========================
+   GRADES GRID (FIXED)
+========================= */
+.grades {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.6rem;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+.actions {
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.actions button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: var(--green-dark);
+}
+
+/* =========================
+   RESULT
+========================= */
+#result {
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-weight: 600;
+  }
+  
+#breakdown {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Add spacing between result box and breakdown text */
+#breakdown {
+    margin-top: 1rem;
+  }
+  
+/* =========================
+   ADS
+========================= */
+.ad-slot {
+  max-width: 960px;
+  margin: 2.2rem auto;
+  padding: 1.2rem;
+  text-align: center;
+  background: var(--ad-bg);
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .theme-switch {
+    justify-content: center;
+  }
+
+  .grades {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.error {
+    color: #c62828; /* clean red */
+    font-weight: 600;
+  }
+
+/* Improve readability for info & FAQ sections */
+.info p,
+.info ul,
+.faq details {
+  margin-bottom: 1rem;
+}
+
+.info h2,
+.faq h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.info ul {
+  padding-left: 1.2rem;
+}
+
+.info li {
+  margin-bottom: 0.6rem;
+}

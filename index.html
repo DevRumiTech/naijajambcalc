@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NaijaJAMBCalc | JAMB Aggregate Score Calculator (Estimate)</title>
+
+  <meta name="description" content="Estimate your JAMB aggregate score using UTME and O'level grades. Fast, transparent, mobile-friendly. For Nigerian students and parents." />
+
+  <!-- FAVICONS (PNG ONLY) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Top Ad Slot -->
+  <div class="ad-slot ad-top">Ad Space</div>
+
+  <header class="site-header">
+    <img src="assets/logo.png" alt="NaijaJAMBCalc logo" class="logo" />
+
+    <div>
+      <h1>NaijaJAMBCalc</h1>
+      <p class="tagline">Clear JAMB aggregate score estimates</p>
+    </div>
+
+    <!-- Theme Switch -->
+    <div class="theme-switch">
+      <button id="lightMode" type="button">Light</button>
+      <button id="darkMode" type="button">Dark</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Calculator Section -->
+    <section class="calculator">
+
+      <h2>JAMB Aggregate Calculator</h2>
+
+      <form id="calcForm">
+
+        <label>
+          UTME Score (0–400)
+          <input type="number" id="utmeScore" min="0" max="400" required />
+        </label>
+
+        <fieldset>
+          <legend>O’level Grades (5 subjects)</legend>
+
+          <div class="grades">
+            <select class="grade"></select>
+            <select class="grade"></select>
+            <select class="grade"></select>
+            <select class="grade"></select>
+            <select class="grade"></select>
+          </div>
+        </fieldset>
+
+        <label>
+          Weighting (UTME / O’level)
+          <select id="weighting">
+            <option value="50">50 / 50</option>
+            <option value="60">60 / 40</option>
+            <option value="70">70 / 30</option>
+          </select>
+        </label>
+
+        <div class="actions">
+          <button type="reset">Reset</button>
+        </div>
+
+      </form>
+
+      <!-- Result -->
+      <output id="result">
+        Enter your scores to see an estimate.
+      </output>
+
+      <!-- Breakdown -->
+      <div id="breakdown"></div>
+
+    </section>
+
+    <!-- Mid Content Ad Slot -->
+    <div class="ad-slot ad-mid">Ad Space</div>
+
+    <!-- Info Section -->
+    <section class="info">
+      <h2>How JAMB Aggregate Scores Work</h2>
+      <p>
+        Nigerian institutions often combine your UTME result with your O’level performance to create an
+        <strong>aggregate score</strong>. There is no single “official” formula used by all schools, so this tool uses a
+        simple, transparent method to help you estimate your standing.
+      </p>
+      <ul>
+        <li><strong>UTME (0–400) is normalized to 0–100</strong> by dividing by 4.</li>
+        <li><strong>O’level grades are converted to points</strong> (A1 highest, C6 lowest in this tool) and averaged.</li>
+        <li><strong>A weighting split</strong> (50/50, 60/40, or 70/30) combines both into one estimated percentage.</li>
+      </ul>
+      <p>
+        <strong>Important:</strong> This is an <strong>estimate only</strong>. Schools may add post-UTME, departmental rules,
+        subject requirements, or different conversions. Use this as a planning guide, not a guarantee.
+      </p>
+
+      <h2>Common Mistakes Students Make</h2>
+      <ul>
+        <li><strong>Assuming all schools calculate the same way.</strong> Each institution can use its own method.</li>
+        <li><strong>Ignoring O’level impact.</strong> Strong grades can significantly improve your combined estimate.</li>
+        <li><strong>Using rumours as cutoffs.</strong> Always verify requirements from official school sources.</li>
+        <li><strong>Entering incomplete grades.</strong> If you select fewer than 5 subjects, this tool averages what you provide.</li>
+      </ul>
+      <p>
+        Tip: Use the weighting selector to see different “what-if” outcomes, then focus your effort where it helps most
+        (UTME performance, stronger O’level grades, or both).
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2>FAQ (Parents & Students)</h2>
+
+      <details>
+        <summary>Is this an official JAMB calculator?</summary>
+        <p>
+          No. NaijaJAMBCalc is an independent tool. It provides a simplified estimate and is not affiliated with JAMB.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can this calculator predict admission?</summary>
+        <p>
+          No. Admission depends on your chosen school and course, competition, requirements, and any screening steps.
+          This tool is best used for guidance and planning.
+        </p>
+      </details>
+
+      <details>
+        <summary>Why is my score different from someone else’s?</summary>
+        <p>
+          Your estimate changes based on UTME score, selected grades, and weighting. Even small grade differences can
+          affect the O’level average.
+        </p>
+      </details>
+
+      <details>
+        <summary>Are all universities the same?</summary>
+        <p>
+          No. Schools can apply different formulas or additional criteria (screening, post-UTME, subject requirements).
+          Always check your institution’s official information.
+        </p>
+      </details>
+
+      <details>
+        <summary>What if I don’t know my final grades yet?</summary>
+        <p>
+          Enter your most likely grades to run a quick estimate. When your final result is available, update the grades
+          to see your new estimate instantly.
+        </p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 NaijaJAMBCalc · Estimates only · Not affiliated with JAMB</p>
+
+    <!-- Footer Ad Slot -->
+    <div class="ad-slot ad-footer">Ad Space</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
